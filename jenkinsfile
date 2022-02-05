@@ -2,7 +2,7 @@ node
 {
     stage('git clone') 
 	{
-	git branch: 'main', url: 'https://github.com/anjanaboppuru/jenkins.git'
+	git branch: 'main', credentialsId: 'git_pass', url: 'https://github.com/anjanaboppuru/jenkins.git'
     }
     stage('maven clean')
 	{
