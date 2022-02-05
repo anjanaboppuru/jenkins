@@ -1,28 +1,11 @@
-node 
-{
-    stage('git clone') 
-	{
-	git branch: 'main', credentialsId: 'git_pass', url: 'https://github.com/anjanaboppuru/jenkins.git'
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
     }
-    stage('maven clean')
-	{
-	   bat '''mvn clean'''
-	}
-	stage('maven validate')
-	{
-	   bat '''mvn validate'''
-	}
-	stage('maven compile')
-	{
-	   bat '''mvn compile'''
-	}
-	stage('maven test')
-	{
-	   bat '''mvn test'''
-	}
-	stage('maven package')
-	{
-	   bat '''mvn packe'''
-	}
 }
-   
